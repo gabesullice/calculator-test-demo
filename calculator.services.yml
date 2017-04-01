@@ -1,0 +1,6 @@
+services:
+  calculator.arithmetic:
+    class: '\Drupal\calculator\Arithmetic'
+  calculator.input_device:
+    class: '\Drupal\calculator\InputDevice'
+    arguments: [ '@calculator.arithmetic' ]

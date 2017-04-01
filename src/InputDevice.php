@@ -2,6 +2,8 @@
 
 namespace Drupal\calculator;
 
+use Symfony\Component\DependencyInjection\ContainerInterface;
+
 class InputDevice implements InputDeviceInterface {
 
   /**
@@ -31,6 +33,15 @@ class InputDevice implements InputDeviceInterface {
 
   public function __construct(ArithmeticInterface $arithmetic) {
     $this->arithmetic = $arithmetic;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container) {
+    return new static(
+      $container->get('calculator.arithmetic')
+    );
   }
 
   /**

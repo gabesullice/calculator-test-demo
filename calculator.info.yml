@@ -1,0 +1,6 @@
+name: Calculator
+description: Testing examples
+package: Custom
+
+type: module
+core: 8.x
